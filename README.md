@@ -10,9 +10,11 @@ with the Z3 Theorem Solver.
 
 ## Dependencies
 
-To run the generated SMT files you need the Z3 Theorem Solver installed.
+To run the SMT file generator files from this repository you need Python 3.6+ installed:
 
-You can get it here:
+https://www.python.org/downloads/
+
+To run the generated SMT files you need the Z3 Theorem Solver installed:
 
 https://github.com/Z3Prover/z3
 
