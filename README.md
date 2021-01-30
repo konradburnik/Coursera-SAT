@@ -1,7 +1,7 @@
 # Coursera - Automated Reasoning - Satisfiability
----
-## Introduction
 
+
+## Introduction
 
 These are my solutions to the honorary assignments for the course:
 
