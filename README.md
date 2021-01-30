@@ -10,7 +10,7 @@ with the Z3 Theorem Solver.
 
 ## Dependencies
 
-To run the SMT file generator files from this repository you need Python 3.6+ installed:
+To run the SMT file generator files from this repository you need Python 3.7+ installed:
 
 https://www.python.org/downloads/
 
