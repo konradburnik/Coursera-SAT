@@ -1,4 +1,5 @@
 # Coursera - Automated Reasoning - Satisfiability
+https://www.coursera.org/learn/automated-reasoning-sat
 
 
 ## Introduction
