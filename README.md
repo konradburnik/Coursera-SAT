@@ -1,22 +1,16 @@
 # Coursera - Automated Reasoning - Satisfiability
-https://www.coursera.org/learn/automated-reasoning-sat
 
 
 ## Introduction
 
-These are my solutions to the honorary assignments for the course:
-
-* Extended Sudoku
-* Job Scheduling
-* Truck Loading
-* Program Correctness
+These are my solutions to the honorary assignments for the course https://www.coursera.org/learn/automated-reasoning-sat
 
 The Python scripts generate an SMT format file that should be executed
-with the Z3 Theorem solver.
+with the Z3 Theorem Solver.
 
 ## Dependencies
 
-To run the generated SMT files you need the Z3 Theorem prover installed.
+To run the generated SMT files you need the Z3 Theorem Solver installed.
 
 You can get it here:
 
