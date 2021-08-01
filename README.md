@@ -1,4 +1,4 @@
-# Coursera - Automated Reasoning - Satisfiability
+# Coursera / Automated Reasoning - Satisfiability
 
 
 ## Introduction
