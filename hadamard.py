@@ -8,21 +8,15 @@ import sys
 
 
 def declare_variables(letter, n):
-    vars = [
-        f'(declare-const {letter}_{i+1}_{j+1} Int)' for i in range(n) for j in range(n) if j >= i]
+    vars = list(set([
+        f'(declare-const {letter}_{1}_{(j-i) % n + 1} Int)' for i in range(n) for j in range(n) if j >= i]))
     return '\n'.join(vars)
 
 
 def value_constraints(letter, n):
-    cons = [f'(or (= {letter}_{i+1}_{j+1} 1) (= {letter}_{i+1}_{j+1} -1))' for i in range(n)
-            for j in range(n) if j >= i]
+    cons = list(set([f'(or (= {letter}_{1}_{(j-i) % n + 1} 1) (= {letter}_{1}_{(j-i) % n + 1} -1))' for i in range(n)
+            for j in range(n) if j >= i]))
     return '\n'.join(cons)
-
-
-def circulant_matrix_constraints(letter, n):
-    circulant = [
-        f'(= {letter}_{i+1}_{j+1} {letter}_{1}_{(j-i) % n + 1})' for i in range(1, n) for j in range(n) if j >= i]
-    return '\n'.join(circulant)
 
 
 def sum_matrix_expression(mats, n):
@@ -46,7 +40,7 @@ def matrix_mult_element_expression(letter1, letter2, i, j, n):
         ii = i; kk1 = k; kk2 = k; jj = j;
         if kk1 < ii: ii, kk1 = kk1, ii
         if kk2 > jj: jj, kk2 = kk2, jj
-        mults.append(f'(* {letter1}_{ii+1}_{kk1+1} {letter2}_{kk2+1}_{jj+1})')
+        mults.append(f'(* {letter1}_{1}_{(kk1 - ii) % n + 1} {letter2}_{1}_{(jj - kk2) % n +1})')
     mults = ' '.join(mults)
     return f'(+ {mults})'
 
@@ -68,11 +62,6 @@ if __name__ == '__main__':
 {value_constraints('B', n)}
 {value_constraints('C', n)}
 {value_constraints('D', n)}
-
-{circulant_matrix_constraints('A', n)}
-{circulant_matrix_constraints('B', n)}
-{circulant_matrix_constraints('C', n)}
-{circulant_matrix_constraints('D', n)}
 
 
 {sum_matrix_expression([('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D')], n)}
